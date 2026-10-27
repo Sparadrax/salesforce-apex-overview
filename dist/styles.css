@@ -1,299 +1,179 @@
-/* Purpose: Provide a responsive editorial layout for the Salesforce Apex project guide. */
-:root {
-    color-scheme: light;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #182c2a;
-    background: #f7f7ef;
-    scroll-behavior: smooth;
-}
-* {
-    box-sizing: border-box;
-}
-body {
-    margin: 0;
-}
-a {
-    color: inherit;
-    text-decoration: none;
-}
-a:focus-visible {
-    outline: 3px solid #ba5a35;
-    outline-offset: 6px;
-}
-a:hover {
-    text-decoration: underline;
-}
+/* Project guide layout uses the main site's Bootstrap typography and shared theme palette. */
 .wrap {
-    width: min(1120px, calc(100% - 64px));
-    margin: 0 auto;
-}
-.navigation, nav, .hero-bottom, .tags, footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
-}
-.navigation {
-    min-height: 100px;
-    border-bottom: 1px solid #d7dcd0;
-}
-.brand, .eyebrow, .section-label, .terminal-bar {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 1.6px;
-}
-.mark {
-    background: #1a3832;
-    color: #daed90;
-    padding: 10px;
-    margin-right: 12px;
-    font-size: 18px;
-}
-nav {
-    font-size: 13px;
-}
-.repo-link {
-    border: 1px solid #bcc5b8;
-    padding: 12px 18px;
-    border-radius: 4px;
-}
-.hero {
-    padding-top: 72px;
-    padding-bottom: 64px;
-}
-.eyebrow, .section-label {
-    color: #526a58;
-}
-.dot {
-    display: inline-block;
-    width: 7px;
-    height: 7px;
-    background: #6c8e40;
-    border-radius: 50%;
-    margin-right: 8px;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px;
 }
 h1 {
-    font-size: clamp(44px, 6.8vw, 82px);
-    font-weight: 500;
-    letter-spacing: -4px;
-    line-height: 1.08;
-    margin: 28px 0;
+    font-weight: 600;
+    letter-spacing: -0.04em;
+    margin: 1rem 0;
 }
-h1 em {
-    font-family: Georgia, serif;
-    font-weight: 400;
-    color: #63803e;
+h2 {
+    font-size: 1.75rem;
+    font-weight: 500;
+    margin: 1rem 0;
+}
+h3 {
+    font-size: 1.25rem;
+    margin: 1rem 0 0.75rem;
 }
 p {
-    font-size: 16px;
-    line-height: 1.75;
-    color: #5a6860;
+    color: var(--site-muted);
+    line-height: 1.65;
+}
+.eyebrow, .section-label {
+    color: var(--site-accent);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+.hero, .workflow, .setup, .resources {
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+}
+.hero-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
 }
 .hero-bottom p {
-    max-width: 580px;
-    font-size: 18px;
+    max-width: 680px;
 }
 .button {
-    display: flex;
-    gap: 40px;
-    padding: 19px 23px;
-    background: #203f36;
-    color: #fff;
-    border-radius: 4px;
-    font-size: 14px;
-    white-space: nowrap;
+    flex-shrink: 0;
 }
 .tags {
-    justify-content: flex-start;
-    gap: 8px;
-    margin-top: 24px;
+    display: flex;
     flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
 }
 .tags span {
-    border: 1px solid #d9dfd0;
-    border-radius: 20px;
-    padding: 7px 13px;
-    font: 12px monospace;
-}
-.workflow {
-    padding: 54px 0 64px;
-    border-top: 1px solid #d7dcd0;
+    border: 1px solid var(--site-border);
+    border-radius: 999px;
+    padding: 0.4rem 0.85rem;
+    color: var(--site-text);
+    background: var(--site-raised);
+    font-size: 0.85rem;
 }
 .section-intro, .architecture-grid, .setup {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 70px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
 }
-h2 {
-    font-size: 37px;
-    font-weight: 500;
-    letter-spacing: -1.3px;
-    line-height: 1.2;
-    margin: 22px 0;
-}
-.section-intro p {
+.section-intro > p {
     align-self: center;
 }
 .steps {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
-    margin-top: 35px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
 }
-.steps article {
-    border-top: 2px solid #9bad79;
-    padding-top: 22px;
+/* Match the homepage cards with rounded surfaces and restrained borders. */
+.steps article, .modules, .terminal, .status {
+    padding: 1.6rem;
+    border: 1px solid var(--site-border);
+    border-radius: 12px;
+    background: var(--site-surface);
 }
-.number {
-    font: 12px monospace;
-    color: #687b4b;
+.number, .dot {
+    color: var(--site-accent);
 }
-h3 {
-    font-size: 18px;
-    font-weight: 500;
-    margin: 24px 0 10px;
-}
-.steps p {
-    font-size: 14px;
-}
-.status {
-    display: flex;
-    align-items: center;
-    gap: 28px;
-    padding: 15px 24px;
-    margin-top: 30px;
-    background: #e9eedc;
-    border-radius: 4px;
+.steps p, .status p {
+    margin-bottom: 0;
 }
 .status strong {
-    font-size: 13px;
-    white-space: nowrap;
-}
-.status p {
-    font-size: 13px;
-    margin: 0;
+    display: block;
+    margin-bottom: 0.5rem;
 }
 .architecture {
-    background: #19372f;
-    color: #f5f7e9;
-    padding: 70px 0;
-}
-.architecture .section-label {
-    color: #c3d696;
-}
-.architecture p {
-    color: #b4c4b8;
-    font-size: 14px;
-}
-.text-link {
-    display: inline-block;
-    margin-top: 15px;
-    font-size: 14px;
-    border-bottom: 1px solid;
-    padding-bottom: 5px;
-}
-.modules {
-    align-self: center;
+    padding: 2rem 0;
 }
 .modules > div {
-    padding: 20px 0;
-    border-bottom: 1px solid #3a5549;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--site-border);
 }
 .modules code {
     display: block;
-    color: #d7e7a2;
-    margin-bottom: 8px;
-    font-size: 14px;
+    color: var(--site-accent);
 }
-.modules span {
-    font-size: 13px;
-    color: #b4c4b8;
+.modules span, .muted {
+    color: var(--site-muted);
 }
-.setup {
-    padding-top: 75px;
-    padding-bottom: 70px;
+.modules p {
+    margin: 1rem 0 0;
 }
-.terminal {
-    align-self: center;
-    background: #e9ecdf;
-    border: 1px solid #d4dbc8;
-    border-radius: 5px;
-    overflow: hidden;
+.text-link {
+    display: inline-block;
+    margin-top: 0.5rem;
 }
 .terminal-bar {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid #d4dbc8;
-    padding: 17px 24px;
-    font-size: 10px;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--site-border);
+    color: var(--site-muted);
+    font-size: 0.75rem;
 }
 pre {
-    padding: 12px 24px;
-    font-size: 14px;
-    line-height: 1.7;
-    overflow-x: auto;
-}
-.muted {
-    color: #68765e;
+    margin: 1rem 0;
+    color: var(--site-text);
+    line-height: 1.65;
 }
 .terminal p {
-    font-size: 12px;
-    padding: 0 24px 10px;
-}
-.resources {
-    padding-bottom: 65px;
+    margin-bottom: 0;
+    font-size: 0.85rem;
 }
 .resources > a {
     display: flex;
     justify-content: space-between;
-    padding: 22px 0;
-    border-bottom: 1px solid #d7dcd0;
-}
-.resources .section-label {
-    margin-bottom: 10px;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--site-border);
 }
 footer {
-    border-top: 1px solid #d7dcd0;
-    padding-top: 25px;
-    padding-bottom: 30px;
-    font-size: 11px;
-    color: #65715e;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    color: var(--site-muted);
+    font-size: 0.8rem;
 }
-footer a {
-    text-decoration: underline;
-}
-@media (max-width: 720px) {
+/* Follow the shared Bootstrap container widths at each breakpoint. */
+@media (min-width: 576px) {
     .wrap {
-        width: calc(100% - 36px);
+        max-width: 540px;
     }
-    .navigation {
-        min-height: 80px;
+}
+@media (min-width: 768px) {
+    .wrap {
+        max-width: 720px;
     }
-    nav a:not(.repo-link) {
-        display: none;
+}
+@media (min-width: 992px) {
+    .wrap {
+        max-width: 960px;
     }
-    .brand {
-        font-size: 9px;
+}
+@media (min-width: 1200px) {
+    .wrap {
+        max-width: 1140px;
     }
-    .hero {
-        padding-top: 50px;
-    }
-    h1 {
-        letter-spacing: -2px;
-    }
-    .hero-bottom, footer, .status {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 16px;
-    }
+}
+@media (max-width: 767.98px) {
     .section-intro, .architecture-grid, .setup, .steps {
         grid-template-columns: 1fr;
-        gap: 22px;
     }
-    h2 {
-        font-size: 32px;
-    }
-    .architecture {
-        padding: 48px 0;
+    .hero-bottom, footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
     }
 }
