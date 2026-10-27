@@ -1,0 +1,299 @@
+/* Purpose: Provide a responsive editorial layout for the Salesforce Apex project guide. */
+:root {
+    color-scheme: light;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #182c2a;
+    background: #f7f7ef;
+    scroll-behavior: smooth;
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+a:focus-visible {
+    outline: 3px solid #ba5a35;
+    outline-offset: 6px;
+}
+a:hover {
+    text-decoration: underline;
+}
+.wrap {
+    width: min(1120px, calc(100% - 64px));
+    margin: 0 auto;
+}
+.navigation, nav, .hero-bottom, .tags, footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+.navigation {
+    min-height: 100px;
+    border-bottom: 1px solid #d7dcd0;
+}
+.brand, .eyebrow, .section-label, .terminal-bar {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+}
+.mark {
+    background: #1a3832;
+    color: #daed90;
+    padding: 10px;
+    margin-right: 12px;
+    font-size: 18px;
+}
+nav {
+    font-size: 13px;
+}
+.repo-link {
+    border: 1px solid #bcc5b8;
+    padding: 12px 18px;
+    border-radius: 4px;
+}
+.hero {
+    padding-top: 72px;
+    padding-bottom: 64px;
+}
+.eyebrow, .section-label {
+    color: #526a58;
+}
+.dot {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    background: #6c8e40;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+h1 {
+    font-size: clamp(44px, 6.8vw, 82px);
+    font-weight: 500;
+    letter-spacing: -4px;
+    line-height: 1.08;
+    margin: 28px 0;
+}
+h1 em {
+    font-family: Georgia, serif;
+    font-weight: 400;
+    color: #63803e;
+}
+p {
+    font-size: 16px;
+    line-height: 1.75;
+    color: #5a6860;
+}
+.hero-bottom p {
+    max-width: 580px;
+    font-size: 18px;
+}
+.button {
+    display: flex;
+    gap: 40px;
+    padding: 19px 23px;
+    background: #203f36;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 14px;
+    white-space: nowrap;
+}
+.tags {
+    justify-content: flex-start;
+    gap: 8px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+}
+.tags span {
+    border: 1px solid #d9dfd0;
+    border-radius: 20px;
+    padding: 7px 13px;
+    font: 12px monospace;
+}
+.workflow {
+    padding: 54px 0 64px;
+    border-top: 1px solid #d7dcd0;
+}
+.section-intro, .architecture-grid, .setup {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+}
+h2 {
+    font-size: 37px;
+    font-weight: 500;
+    letter-spacing: -1.3px;
+    line-height: 1.2;
+    margin: 22px 0;
+}
+.section-intro p {
+    align-self: center;
+}
+.steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-top: 35px;
+}
+.steps article {
+    border-top: 2px solid #9bad79;
+    padding-top: 22px;
+}
+.number {
+    font: 12px monospace;
+    color: #687b4b;
+}
+h3 {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 24px 0 10px;
+}
+.steps p {
+    font-size: 14px;
+}
+.status {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    padding: 15px 24px;
+    margin-top: 30px;
+    background: #e9eedc;
+    border-radius: 4px;
+}
+.status strong {
+    font-size: 13px;
+    white-space: nowrap;
+}
+.status p {
+    font-size: 13px;
+    margin: 0;
+}
+.architecture {
+    background: #19372f;
+    color: #f5f7e9;
+    padding: 70px 0;
+}
+.architecture .section-label {
+    color: #c3d696;
+}
+.architecture p {
+    color: #b4c4b8;
+    font-size: 14px;
+}
+.text-link {
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 14px;
+    border-bottom: 1px solid;
+    padding-bottom: 5px;
+}
+.modules {
+    align-self: center;
+}
+.modules > div {
+    padding: 20px 0;
+    border-bottom: 1px solid #3a5549;
+}
+.modules code {
+    display: block;
+    color: #d7e7a2;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+.modules span {
+    font-size: 13px;
+    color: #b4c4b8;
+}
+.setup {
+    padding-top: 75px;
+    padding-bottom: 70px;
+}
+.terminal {
+    align-self: center;
+    background: #e9ecdf;
+    border: 1px solid #d4dbc8;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.terminal-bar {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #d4dbc8;
+    padding: 17px 24px;
+    font-size: 10px;
+}
+pre {
+    padding: 12px 24px;
+    font-size: 14px;
+    line-height: 1.7;
+    overflow-x: auto;
+}
+.muted {
+    color: #68765e;
+}
+.terminal p {
+    font-size: 12px;
+    padding: 0 24px 10px;
+}
+.resources {
+    padding-bottom: 65px;
+}
+.resources > a {
+    display: flex;
+    justify-content: space-between;
+    padding: 22px 0;
+    border-bottom: 1px solid #d7dcd0;
+}
+.resources .section-label {
+    margin-bottom: 10px;
+}
+footer {
+    border-top: 1px solid #d7dcd0;
+    padding-top: 25px;
+    padding-bottom: 30px;
+    font-size: 11px;
+    color: #65715e;
+}
+footer a {
+    text-decoration: underline;
+}
+@media (max-width: 720px) {
+    .wrap {
+        width: calc(100% - 36px);
+    }
+    .navigation {
+        min-height: 80px;
+    }
+    nav a:not(.repo-link) {
+        display: none;
+    }
+    .brand {
+        font-size: 9px;
+    }
+    .hero {
+        padding-top: 50px;
+    }
+    h1 {
+        letter-spacing: -2px;
+    }
+    .hero-bottom, footer, .status {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 16px;
+    }
+    .section-intro, .architecture-grid, .setup, .steps {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+    h2 {
+        font-size: 32px;
+    }
+    .architecture {
+        padding: 48px 0;
+    }
+}
