@@ -177,3 +177,30 @@ footer {
         gap: 1rem;
     }
 }
+
+/* Separate the guide sections with thin lines aligned to the shared content width. */
+main > section + section::before {
+    content: "";
+    display: block;
+    height: 1px;
+    background: var(--site-border);
+    margin-bottom: 2rem;
+}
+
+/* The architecture section has an outer wrapper, so constrain its divider to the inner grid. */
+main > .architecture::before {
+    display: none;
+}
+
+.architecture-grid::before {
+    content: "";
+    grid-column: 1 / -1;
+    height: 1px;
+    background: var(--site-border);
+}
+
+/* Grid sections need the divider to span both columns. */
+main > .setup::before {
+    grid-column: 1 / -1;
+    margin-bottom: 0;
+}
